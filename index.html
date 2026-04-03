@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CT.gov Evidence Intelligence Hub</title>
+<style>
+:root {
+  --bg: #f8f9fa; --bg2: #ffffff; --text: #212529; --text2: #495057;
+  --accent: #0d6efd; --accent2: #198754; --border: #dee2e6;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.08); --radius: 12px;
+  --danger: #dc3545; --warning: #fd7e14; --info: #0dcaf0;
+}
+.dark {
+  --bg: #1a1d23; --bg2: #22252b; --text: #e8eaed; --text2: #9aa0a6;
+  --accent: #5b9cf6; --accent2: #4caf50; --border: #3c4043;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.6; }
+a.skip-nav { position: absolute; left: -9999px; top: 0; z-index: 999;
+  background: var(--accent); color: #fff; padding: 8px 16px; }
+a.skip-nav:focus { left: 0; }
+
+header { background: var(--bg2); border-bottom: 1px solid var(--border);
+  padding: 20px 32px; display: flex; justify-content: space-between; align-items: center; }
+header h1 { font-size: 1.5rem; font-weight: 700; }
+header h1 span { color: var(--accent); }
+.header-controls { display: flex; gap: 12px; align-items: center; }
+.dark-toggle { background: var(--bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 6px 12px; cursor: pointer; color: var(--text); font-size: 0.85rem; }
+
+.search-bar { background: var(--bg2); padding: 20px 32px; border-bottom: 1px solid var(--border); }
+.search-bar input { width: 100%; max-width: 500px; padding: 10px 16px; border: 2px solid var(--border);
+  border-radius: 8px; font-size: 1rem; background: var(--bg); color: var(--text); }
+.search-bar input:focus { border-color: var(--accent); outline: none; }
+.search-bar label { font-weight: 600; margin-right: 12px; }
+.search-hint { color: var(--text2); font-size: 0.85rem; margin-top: 6px; }
+.quick-links { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.quick-link { background: var(--accent); color: #fff; padding: 4px 12px; border-radius: 16px;
+  font-size: 0.8rem; text-decoration: none; cursor: pointer; border: none; }
+.quick-link:hover { opacity: 0.9; }
+
+main { padding: 32px; max-width: 1400px; margin: 0 auto; }
+h2 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text2); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; box-shadow: var(--card-shadow); transition: transform 0.15s, box-shadow 0.15s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.card-icon { font-size: 2rem; margin-bottom: 12px; }
+.card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.card p { color: var(--text2); font-size: 0.9rem; margin-bottom: 12px; }
+.card-meta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.badge { padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+.badge-new { background: var(--accent); color: #fff; }
+.badge-existing { background: var(--accent2); color: #fff; }
+.badge-tests { background: var(--border); color: var(--text); }
+.card-link { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+.card-link:hover { text-decoration: underline; }
+
+.section { margin-top: 40px; }
+.workflow { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; margin-top: 16px; }
+.workflow h3 { margin-bottom: 12px; }
+.workflow-steps { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.step { background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 14px; font-size: 0.85rem; }
+.arrow { color: var(--accent); font-weight: 700; font-size: 1.2rem; }
+
+footer { text-align: center; padding: 24px; color: var(--text2); font-size: 0.8rem;
+  border-top: 1px solid var(--border); margin-top: 40px; }
+</style>
+</head>
+<body>
+<a class="skip-nav" href="#main-content">Skip to main content</a>
+
+<header>
+  <h1><span>CT.gov</span> Evidence Intelligence Hub</h1>
+  <div class="header-controls">
+    <span id="tool-count">7 Tools</span>
+    <button class="dark-toggle" onclick="toggleDark()" aria-label="Toggle dark mode">Dark Mode</button>
+  </div>
+</header>
+
+<div class="search-bar">
+  <label for="nct-input">NCT ID Lookup:</label>
+  <input type="text" id="nct-input" placeholder="Enter NCT ID (e.g., NCT02653482)" aria-label="NCT ID lookup">
+  <div class="search-hint">Cross-reference any trial across all tools</div>
+  <div class="quick-links" id="quick-links" style="display:none;">
+    <!-- Populated by JS when NCT ID is entered -->
+  </div>
+</div>
+
+<main id="main-content">
+  <h2>New Tools — Integrity Intelligence Suite</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">&#128269;</div>
+      <h3>OutcomeSwitchDetector</h3>
+      <p>Computational detection of outcome switching between registration and results. Extends COMPare to registry scale.</p>
+      <div class="card-meta">
+        <span class="badge badge-new">NEW</span>
+        <span class="badge badge-tests">25/25 tests</span>
+      </div>
+      <a class="card-link" href="../OutcomeSwitchDetector/dashboard.html" id="link-osd">Open Dashboard &rarr;</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#128200;</div>
+      <h3>ProtocolEvolution</h3>
+      <p>Protocol amendment pattern detector. Identifies rescue, stealth switch, scope creep, and goal-post move patterns.</p>
+      <div class="card-meta">
+        <span class="badge badge-new">NEW</span>
+        <span class="badge badge-tests">25/25 tests</span>
+      </div>
+      <a class="card-link" href="../ProtocolEvolution/dashboard.html" id="link-pe">Open Dashboard &rarr;</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#127758;</div>
+      <h3>TrialAtlas</h3>
+      <p>Network analysis and geographic mapping. Sponsor-site networks, trial factories, geographic deserts.</p>
+      <div class="card-meta">
+        <span class="badge badge-new">NEW</span>
+        <span class="badge badge-tests">25/25 tests</span>
+      </div>
+      <a class="card-link" href="../TrialAtlas/dashboard.html" id="link-ta">Open Dashboard &rarr;</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#129504;</div>
+      <h3>EnrollmentOracle</h3>
+      <p>ML prediction of trial completion from registry features. XGBoost with SHAP explanations.</p>
+      <div class="card-meta">
+        <span class="badge badge-new">NEW</span>
+        <span class="badge badge-tests">25/25 tests</span>
+      </div>
+      <a class="card-link" href="../EnrollmentOracle/dashboard.html" id="link-eo">Open Dashboard &rarr;</a>
+    </div>
+  </div>
+
+  <h2 style="margin-top: 32px;">Existing CT.gov Tools</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">&#128064;</div>
+      <h3>Hiddenness Atlas</h3>
+      <p>Full-registry transparency audit. 578K studies, 72.7% non-disclosure rate, 16 analysis waves.</p>
+      <div class="card-meta">
+        <span class="badge badge-existing">EXISTING</span>
+        <span class="badge badge-tests">24 tests</span>
+      </div>
+      <a class="card-link" href="../../Projects/ctgov-hiddenness-atlas/index.html">Open &rarr;</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#128225;</div>
+      <h3>TrialRadar</h3>
+      <p>Living CT.gov surveillance. 15 therapeutic areas, ghost protocol detection, new results alerts.</p>
+      <div class="card-meta">
+        <span class="badge badge-existing">EXISTING</span>
+      </div>
+      <a class="card-link" href="../../Projects/TrialRadar/TrialRadar.html">Open &rarr;</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#128270;</div>
+      <h3>CT.gov Search Strategies</h3>
+      <p>PICO search generator, 7-database translator, ML strategy optimizer. PWA with offline support.</p>
+      <div class="card-meta">
+        <span class="badge badge-existing">EXISTING</span>
+        <span class="badge badge-tests">17 tests</span>
+      </div>
+      <a class="card-link" href="../../Projects/ctgov-search-strategies/CTGov-Search-Complete.html">Open &rarr;</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Cross-Tool Workflows</h2>
+
+    <div class="workflow">
+      <h3>Check Trial Integrity</h3>
+      <div class="workflow-steps">
+        <span class="step">Search (Search Strategies)</span>
+        <span class="arrow">&rarr;</span>
+        <span class="step">Check Outcomes (OutcomeSwitchDetector)</span>
+        <span class="arrow">&rarr;</span>
+        <span class="step">View Network (TrialAtlas)</span>
+        <span class="arrow">&rarr;</span>
+        <span class="step">Predict Completion (EnrollmentOracle)</span>
+      </div>
+    </div>
+
+    <div class="workflow" style="margin-top: 12px;">
+      <h3>Flag Rescue Patterns</h3>
+      <div class="workflow-steps">
+        <span class="step">Detect Amendments (ProtocolEvolution)</span>
+        <span class="arrow">&rarr;</span>
+        <span class="step">Check Sponsor Disclosure (Hiddenness Atlas)</span>
+        <span class="arrow">&rarr;</span>
+        <span class="step">Monitor for Results (TrialRadar)</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  CT.gov Evidence Intelligence Hub &mdash; Part of the CT.gov Integrity Intelligence Suite<br>
+  Data source: ClinicalTrials.gov API v2 (open access, no paywalls)
+</footer>
+
+<script>
+// Dark mode
+function toggleDark() {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('ctgov_hub_preferences', JSON.stringify({dark: isDark}));
+}
+(function() {
+  try {
+    const prefs = JSON.parse(localStorage.getItem('ctgov_hub_preferences') || '{}');
+    if (prefs.dark) document.body.classList.add('dark');
+  } catch(e) {}
+})();
+
+// NCT ID lookup
+const nctInput = document.getElementById('nct-input');
+const quickLinks = document.getElementById('quick-links');
+
+const TOOLS = [
+  {name: 'OutcomeSwitchDetector', path: '../OutcomeSwitchDetector/dashboard.html', param: 'nctId'},
+  {name: 'ProtocolEvolution', path: '../ProtocolEvolution/dashboard.html', param: 'nctId'},
+  {name: 'TrialAtlas', path: '../TrialAtlas/dashboard.html', param: 'nctId'},
+  {name: 'EnrollmentOracle', path: '../EnrollmentOracle/dashboard.html', param: 'nctId'},
+];
+
+nctInput.addEventListener('input', function() {
+  const val = this.value.trim();
+  if (/^NCT\d{8}$/i.test(val)) {
+    quickLinks.style.display = 'flex';
+    quickLinks.innerHTML = TOOLS.map(function(t) {
+      return '<a class="quick-link" href="' + t.path + '?' + t.param + '=' +
+        encodeURIComponent(val.toUpperCase()) + '">' + t.name + '</a>';
+    }).join('');
+  } else {
+    quickLinks.style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>
