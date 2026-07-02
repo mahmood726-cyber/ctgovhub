@@ -80,7 +80,7 @@ footer { text-align: center; padding: 24px; color: var(--text2); font-size: 0.8r
   <h1><span>CT.gov</span> Evidence Intelligence Hub</h1>
   <div class="header-controls">
     <span id="tool-count">7 Tools</span>
-    <button class="dark-toggle" onclick="toggleDark()" aria-label="Toggle dark mode">Dark Mode</button>
+    <button id="dark-toggle" class="dark-toggle" onclick="toggleDark()" aria-label="Toggle dark mode" aria-pressed="false">Dark Mode</button>
   </div>
 </header>
 
@@ -212,15 +212,25 @@ footer { text-align: center; padding: 24px; color: var(--text2); font-size: 0.8r
 
 <script>
 // Dark mode
+function syncDarkToggle(isDark) {
+  const btn = document.getElementById('dark-toggle');
+  if (!btn) return;
+  btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  btn.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+}
 function toggleDark() {
   document.body.classList.toggle('dark');
   const isDark = document.body.classList.contains('dark');
   localStorage.setItem('ctgov_hub_preferences', JSON.stringify({dark: isDark}));
+  syncDarkToggle(isDark);
 }
 (function() {
   try {
     const prefs = JSON.parse(localStorage.getItem('ctgov_hub_preferences') || '{}');
-    if (prefs.dark) document.body.classList.add('dark');
+    if (prefs.dark) {
+      document.body.classList.add('dark');
+      syncDarkToggle(true);
+    }
   } catch(e) {}
 })();
 
