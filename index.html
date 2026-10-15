@@ -71,6 +71,24 @@ h2 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text2); }
 
 footer { text-align: center; padding: 24px; color: var(--text2); font-size: 0.8rem;
   border-top: 1px solid var(--border); margin-top: 40px; }
+
+/* Project library — links are GitHub repositories, not unverified Pages apps */
+.catalog-controls { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+.catalog-controls input, .catalog-controls select {
+  background:var(--bg2); color:var(--text); border:1px solid var(--border);
+  border-radius:8px; padding:10px 12px; font-size:0.9rem;
+}
+.catalog-controls input { flex:1; min-width:200px; }
+.catalog-description { font-size:0.88rem; color:var(--text2); margin:0 0 12px; }
+.catalog-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:10px; }
+.catalog-entry { display:flex; flex-direction:column; gap:6px; background:var(--bg2);
+ border:1px solid var(--border); border-radius:9px; padding:12px; }
+.catalog-entry a { color:var(--accent); overflow-wrap:anywhere; font-weight:600; }
+.catalog-entry span { color:var(--text2); font-size:0.78rem; }
+.catalog-more { margin-top:12px; padding:10px 16px; background:var(--accent);
+ color:white; border:0; border-radius:8px; cursor:pointer; }
+.catalog-more[hidden] { display:none; }
+
 </style>
 </head>
 <body>
@@ -79,7 +97,7 @@ footer { text-align: center; padding: 24px; color: var(--text2); font-size: 0.8r
 <header>
   <h1><span>CT.gov</span> Evidence Intelligence Hub</h1>
   <div class="header-controls">
-    <span id="tool-count">7 Tools</span>
+    <span id="tool-count">7 Featured Tools</span>
     <button id="dark-toggle" class="dark-toggle" onclick="toggleDark()" aria-label="Toggle dark mode" aria-pressed="false">Dark Mode</button>
   </div>
 </header>
@@ -87,35 +105,35 @@ footer { text-align: center; padding: 24px; color: var(--text2); font-size: 0.8r
 <div class="search-bar">
   <label for="nct-input">NCT ID Lookup:</label>
   <input type="text" id="nct-input" placeholder="Enter NCT ID (e.g., NCT02653482)" aria-label="NCT ID lookup">
-  <div class="search-hint">Cross-reference any trial across all tools</div>
+  <div class="search-hint">Open the official trial record or visit a featured dashboard for manual review. These dashboards do not currently provide verified automatic NCT-parameter lookup.</div>
   <div class="quick-links" id="quick-links" style="display:none;">
     <!-- Populated by JS when NCT ID is entered -->
   </div>
 </div>
 
 <main id="main-content">
-  <h2>New Tools — Integrity Intelligence Suite</h2>
+  <h2>Featured Registry Tools — Verify Methods Before Use</h2>
   <div class="grid">
     <div class="card">
       <div class="card-icon">&#128269;</div>
       <h3>OutcomeSwitchDetector</h3>
-      <p>Computational detection of outcome switching between registration and results. Extends COMPare to registry scale.</p>
+      <p>Exploratory comparisons of registry outcome information; switching claims require authenticated historical records.</p>
       <div class="card-meta">
         <span class="badge badge-new">NEW</span>
-        <span class="badge badge-tests">25/25 tests</span>
+        <span class="badge badge-tests">Research prototype</span>
       </div>
-      <a class="card-link" href="../OutcomeSwitchDetector/dashboard.html" id="link-osd">Open Dashboard &rarr;</a>
+      <a class="card-link" href="../outcomeswitchdetector/dashboard.html" id="link-osd">Open Dashboard &rarr;</a>
     </div>
 
     <div class="card">
       <div class="card-icon">&#128200;</div>
       <h3>ProtocolEvolution</h3>
-      <p>Protocol amendment pattern detector. Identifies rescue, stealth switch, scope creep, and goal-post move patterns.</p>
+      <p>Exploratory protocol-pattern dashboard; check versioned historical evidence before inferring an amendment.</p>
       <div class="card-meta">
         <span class="badge badge-new">NEW</span>
-        <span class="badge badge-tests">25/25 tests</span>
+        <span class="badge badge-tests">Research prototype</span>
       </div>
-      <a class="card-link" href="../ProtocolEvolution/dashboard.html" id="link-pe">Open Dashboard &rarr;</a>
+      <a class="card-link" href="../protocolevolution/dashboard.html" id="link-pe">Open Dashboard &rarr;</a>
     </div>
 
     <div class="card">
@@ -124,20 +142,20 @@ footer { text-align: center; padding: 24px; color: var(--text2); font-size: 0.8r
       <p>Network analysis and geographic mapping. Sponsor-site networks, trial factories, geographic deserts.</p>
       <div class="card-meta">
         <span class="badge badge-new">NEW</span>
-        <span class="badge badge-tests">25/25 tests</span>
+        <span class="badge badge-tests">Research prototype</span>
       </div>
-      <a class="card-link" href="../TrialAtlas/dashboard.html" id="link-ta">Open Dashboard &rarr;</a>
+      <a class="card-link" href="../trialatlas/dashboard.html" id="link-ta">Open Dashboard &rarr;</a>
     </div>
 
     <div class="card">
       <div class="card-icon">&#129504;</div>
       <h3>EnrollmentOracle</h3>
-      <p>ML prediction of trial completion from registry features. XGBoost with SHAP explanations.</p>
+      <p>Trial-completion prediction research. External validation is required before using predictions.</p>
       <div class="card-meta">
         <span class="badge badge-new">NEW</span>
-        <span class="badge badge-tests">25/25 tests</span>
+        <span class="badge badge-tests">Research prototype</span>
       </div>
-      <a class="card-link" href="../EnrollmentOracle/dashboard.html" id="link-eo">Open Dashboard &rarr;</a>
+      <a class="card-link" href="../enrollmentoracle/dashboard.html" id="link-eo">Open Dashboard &rarr;</a>
     </div>
   </div>
 
@@ -146,10 +164,10 @@ footer { text-align: center; padding: 24px; color: var(--text2); font-size: 0.8r
     <div class="card">
       <div class="card-icon">&#128064;</div>
       <h3>Hiddenness Atlas</h3>
-      <p>Full-registry transparency audit. 578K studies, 72.7% non-disclosure rate, 16 analysis waves.</p>
+      <p>Registry reporting and transparency analyses. Verify the source snapshot and denominator definitions before interpreting rates.</p>
       <div class="card-meta">
         <span class="badge badge-existing">EXISTING</span>
-        <span class="badge badge-tests">24 tests</span>
+        <span class="badge badge-tests">See source</span>
       </div>
       <a class="card-link" href="../ctgov-hiddenness-atlas/index.html">Open &rarr;</a>
     </div>
@@ -161,7 +179,7 @@ footer { text-align: center; padding: 24px; color: var(--text2); font-size: 0.8r
       <div class="card-meta">
         <span class="badge badge-existing">EXISTING</span>
       </div>
-      <a class="card-link" href="../TrialRadar/TrialRadar.html">Open &rarr;</a>
+      <a class="card-link" href="../trialradar/TrialRadar.html">Open &rarr;</a>
     </div>
 
     <div class="card">
@@ -170,11 +188,25 @@ footer { text-align: center; padding: 24px; color: var(--text2); font-size: 0.8r
       <p>PICO search generator, 7-database translator, ML strategy optimizer. PWA with offline support.</p>
       <div class="card-meta">
         <span class="badge badge-existing">EXISTING</span>
-        <span class="badge badge-tests">17 tests</span>
+        <span class="badge badge-tests">See source</span>
       </div>
       <a class="card-link" href="../ctgov-search-strategies/CTGov-Search-Complete.html">Open &rarr;</a>
     </div>
   </div>
+
+  <section class="section" id="project-library" aria-labelledby="catalog-heading">
+    <h2 id="catalog-heading">ClinicalTrials.gov Project Library</h2>
+    <p class="catalog-description">Explore research repositories by name and subject. Links open GitHub source code, not assumed working deployments. The catalogue is a repository index, not an audit of scientific validity.</p>
+    <div class="catalog-controls">
+      <label for="catalog-search" style="position:absolute;left:-9999px;">Search repositories</label>
+      <input id="catalog-search" type="search" placeholder="Search repository names..." autocomplete="off">
+      <label for="catalog-group" style="position:absolute;left:-9999px;">Filter repository category</label>
+      <select id="catalog-group" aria-label="Repository category"><option value="">All categories</option></select>
+    </div>
+    <p id="catalog-count" class="catalog-description" role="status" aria-live="polite">Loading repository catalogue…</p>
+    <div id="catalog-list" class="catalog-list"></div>
+    <button id="catalog-more" class="catalog-more" hidden type="button">Show more repositories</button>
+  </section>
 
   <div class="section">
     <h2>Cross-Tool Workflows</h2>
@@ -239,24 +271,106 @@ const nctInput = document.getElementById('nct-input');
 const quickLinks = document.getElementById('quick-links');
 
 const TOOLS = [
-  {name: 'OutcomeSwitchDetector', path: '../OutcomeSwitchDetector/dashboard.html', param: 'nctId'},
-  {name: 'ProtocolEvolution', path: '../ProtocolEvolution/dashboard.html', param: 'nctId'},
-  {name: 'TrialAtlas', path: '../TrialAtlas/dashboard.html', param: 'nctId'},
-  {name: 'EnrollmentOracle', path: '../EnrollmentOracle/dashboard.html', param: 'nctId'},
+  {name: 'OutcomeSwitchDetector', path: '../outcomeswitchdetector/dashboard.html'},
+  {name: 'ProtocolEvolution', path: '../protocolevolution/dashboard.html'},
+  {name: 'TrialAtlas', path: '../trialatlas/dashboard.html'},
+  {name: 'EnrollmentOracle', path: '../enrollmentoracle/dashboard.html'},
 ];
 
 nctInput.addEventListener('input', function() {
   const val = this.value.trim();
   if (/^NCT\d{8}$/i.test(val)) {
     quickLinks.style.display = 'flex';
-    quickLinks.innerHTML = TOOLS.map(function(t) {
-      return '<a class="quick-link" href="' + t.path + '?' + t.param + '=' +
-        encodeURIComponent(val.toUpperCase()) + '">' + t.name + '</a>';
-    }).join('');
+    quickLinks.innerHTML =
+      '<a class="quick-link" href="https://clinicaltrials.gov/study/' +
+        encodeURIComponent(val.toUpperCase()) +
+        '" target="_blank" rel="noopener noreferrer">Official trial record</a>' +
+      TOOLS.map(function(t) {
+        return '<a class="quick-link" href="' + t.path + '">' +
+          t.name + ' (manual review)</a>';
+      }).join('');
   } else {
     quickLinks.style.display = 'none';
   }
 });
+
+// Discoverable, accessible GitHub-source project catalogue (no fabricated apps).
+const catalogSearch = document.getElementById('catalog-search');
+const catalogGroup = document.getElementById('catalog-group');
+const catalogList = document.getElementById('catalog-list');
+const catalogCount = document.getElementById('catalog-count');
+const catalogMore = document.getElementById('catalog-more');
+let allProjects = [];
+let catalogLimit = 18;
+
+function renderCatalog() {
+  const query = catalogSearch.value.trim().toLowerCase();
+  const group = catalogGroup.value;
+  const found = allProjects.filter(function(project) {
+    return (!group || project.group === group) &&
+      project.name.toLowerCase().includes(query);
+  });
+  catalogList.replaceChildren();
+  for (const project of found.slice(0, catalogLimit)) {
+    const entry = document.createElement('div');
+    entry.className = 'catalog-entry';
+    const link = document.createElement('a');
+    link.href = project.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = project.name;
+    const category = document.createElement('span');
+    category.textContent = project.group + ' · GitHub source';
+    entry.append(link, category);
+    catalogList.appendChild(entry);
+  }
+  catalogCount.textContent = 'Showing ' + Math.min(catalogLimit, found.length) +
+    ' of ' + found.length + ' matching repositories (' +
+    allProjects.length + ' indexed)';
+  catalogMore.hidden = catalogLimit >= found.length;
+}
+catalogSearch.addEventListener('input', function() {
+  catalogLimit = 18;
+  renderCatalog();
+});
+catalogGroup.addEventListener('change', function() {
+  catalogLimit = 18;
+  renderCatalog();
+});
+catalogMore.addEventListener('click', function() {
+  catalogLimit += 18;
+  renderCatalog();
+});
+
+fetch('catalog.json').then(function(response) {
+  if (!response.ok) throw new Error('HTTP ' + response.status);
+  return response.json();
+}).then(function(catalog) {
+  if (!Array.isArray(catalog.repositories)) throw new Error('Invalid catalogue');
+  allProjects = catalog.repositories.filter(function(project) {
+    return /^[-\w.]+$/.test(project.name) && typeof project.group === 'string' &&
+      project.url === 'https://github.com/mahmood726-cyber/' + project.name;
+  });
+  const groups = Array.from(new Set(allProjects.map(function(project) {
+    return project.group;
+  }))).sort();
+  for (const value of groups) {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    catalogGroup.append(option);
+  }
+  document.getElementById('tool-count').textContent =
+    '7 Featured · ' + allProjects.length + ' Repositories';
+  renderCatalog();
+}).catch(function() {
+  catalogCount.textContent = 'Repository catalogue could not load. Browse the GitHub account instead.';
+  const link = document.createElement('a');
+  link.href = 'https://github.com/mahmood726-cyber?tab=repositories';
+  link.textContent = 'Open GitHub repositories';
+  catalogList.append(link);
+});
+
 </script>
 </body>
 </html>
