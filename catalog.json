@@ -1,0 +1,442 @@
+{
+  "catalog_date": "2026-10-15",
+  "source": "GitHub repositories accessible to the account; links open source repositories, not necessarily deployed apps",
+  "total": 87,
+  "repositories": [
+    {
+      "name": "cardio-ctgov-living-meta-portfolio",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/cardio-ctgov-living-meta-portfolio"
+    },
+    {
+      "name": "ctgov-actual-discipline-repeaters",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/ctgov-actual-discipline-repeaters"
+    },
+    {
+      "name": "ctgov-actual-field-discipline",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/ctgov-actual-field-discipline"
+    },
+    {
+      "name": "ctgov-black-box-sponsor-repeaters",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-black-box-sponsor-repeaters"
+    },
+    {
+      "name": "ctgov-black-box-trials",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-black-box-trials"
+    },
+    {
+      "name": "ctgov-cardiovascular-hiddenness",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-cardiovascular-hiddenness"
+    },
+    {
+      "name": "ctgov-completion-cohort-debt",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-completion-cohort-debt"
+    },
+    {
+      "name": "ctgov-completion-delay-debt",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-completion-delay-debt"
+    },
+    {
+      "name": "ctgov-completion-timing-repeaters",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-completion-timing-repeaters"
+    },
+    {
+      "name": "ctgov-condition-ancient-backlog",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-ancient-backlog"
+    },
+    {
+      "name": "ctgov-condition-description-black-box",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-description-black-box"
+    },
+    {
+      "name": "ctgov-condition-detailed-description-gap",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-detailed-description-gap"
+    },
+    {
+      "name": "ctgov-condition-enrollment-gap",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-enrollment-gap"
+    },
+    {
+      "name": "ctgov-condition-excess-watchlist",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-excess-watchlist"
+    },
+    {
+      "name": "ctgov-condition-ghost-watchlist",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-ghost-watchlist"
+    },
+    {
+      "name": "ctgov-condition-hiddenness-map",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-hiddenness-map"
+    },
+    {
+      "name": "ctgov-condition-narrative-gap",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-narrative-gap"
+    },
+    {
+      "name": "ctgov-condition-overdue-debt",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-overdue-debt"
+    },
+    {
+      "name": "ctgov-condition-primary-only-gap",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-primary-only-gap"
+    },
+    {
+      "name": "ctgov-condition-primary-outcome-gap",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-primary-outcome-gap"
+    },
+    {
+      "name": "ctgov-condition-sponsor-repeaters",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-sponsor-repeaters"
+    },
+    {
+      "name": "ctgov-condition-text-asymmetry",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-condition-text-asymmetry"
+    },
+    {
+      "name": "ctgov-country-ancient-backlog",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-ancient-backlog"
+    },
+    {
+      "name": "ctgov-country-condition-hiddenness",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-condition-hiddenness"
+    },
+    {
+      "name": "ctgov-country-description-black-box",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-description-black-box"
+    },
+    {
+      "name": "ctgov-country-detailed-description-gap",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-detailed-description-gap"
+    },
+    {
+      "name": "ctgov-country-enrollment-gap",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-enrollment-gap"
+    },
+    {
+      "name": "ctgov-country-excess-watchlist",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-excess-watchlist"
+    },
+    {
+      "name": "ctgov-country-ghost-watchlist",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-ghost-watchlist"
+    },
+    {
+      "name": "ctgov-country-narrative-gap",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-narrative-gap"
+    },
+    {
+      "name": "ctgov-country-overdue-debt",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-overdue-debt"
+    },
+    {
+      "name": "ctgov-country-primary-only-gap",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-primary-only-gap"
+    },
+    {
+      "name": "ctgov-country-primary-outcome-gap",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-primary-outcome-gap"
+    },
+    {
+      "name": "ctgov-country-reporting-map",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-reporting-map"
+    },
+    {
+      "name": "ctgov-country-sponsor-repeaters",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-sponsor-repeaters"
+    },
+    {
+      "name": "ctgov-country-text-asymmetry",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-country-text-asymmetry"
+    },
+    {
+      "name": "ctgov-description-black-box-repeaters",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-description-black-box-repeaters"
+    },
+    {
+      "name": "ctgov-design-purpose-hiddenness",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-design-purpose-hiddenness"
+    },
+    {
+      "name": "ctgov-disease-geography-gap",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-disease-geography-gap"
+    },
+    {
+      "name": "ctgov-enrollment-size-gap",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-enrollment-size-gap"
+    },
+    {
+      "name": "ctgov-evidence-visibility-gap",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-evidence-visibility-gap"
+    },
+    {
+      "name": "ctgov-geography-scale-visibility",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-geography-scale-visibility"
+    },
+    {
+      "name": "ctgov-hiddenness-atlas",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-hiddenness-atlas"
+    },
+    {
+      "name": "ctgov-industry-disclosure-gap",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-industry-disclosure-gap"
+    },
+    {
+      "name": "ctgov-industry-family-repeaters",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-industry-family-repeaters"
+    },
+    {
+      "name": "ctgov-intervention-type-gap",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-intervention-type-gap"
+    },
+    {
+      "name": "ctgov-metabolic-hiddenness",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-metabolic-hiddenness"
+    },
+    {
+      "name": "ctgov-modality-sponsor-repeaters",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-modality-sponsor-repeaters"
+    },
+    {
+      "name": "ctgov-narrative-gap-repeaters",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-narrative-gap-repeaters"
+    },
+    {
+      "name": "ctgov-oncology-hiddenness",
+      "group": "Clinical areas",
+      "url": "https://github.com/mahmood726-cyber/ctgov-oncology-hiddenness"
+    },
+    {
+      "name": "ctgov-outcome-density-gap",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-outcome-density-gap"
+    },
+    {
+      "name": "ctgov-overdue-results-clock",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-overdue-results-clock"
+    },
+    {
+      "name": "ctgov-phase-reporting-gap",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-phase-reporting-gap"
+    },
+    {
+      "name": "ctgov-probable-act-fdaaa-debt",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/ctgov-probable-act-fdaaa-debt"
+    },
+    {
+      "name": "ctgov-protocol-evolution",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/ctgov-protocol-evolution"
+    },
+    {
+      "name": "ctgov-publication-index-gap",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-publication-index-gap"
+    },
+    {
+      "name": "ctgov-publication-undercount-audit",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-publication-undercount-audit"
+    },
+    {
+      "name": "ctgov-registry-survival",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/ctgov-registry-survival"
+    },
+    {
+      "name": "ctgov-risk-adjusted-hiddenness",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-risk-adjusted-hiddenness"
+    },
+    {
+      "name": "ctgov-rule-era-reporting-gap",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-rule-era-reporting-gap"
+    },
+    {
+      "name": "ctgov-search-strategies",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/ctgov-search-strategies"
+    },
+    {
+      "name": "ctgov-sponsor-ancient-backlog",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-ancient-backlog"
+    },
+    {
+      "name": "ctgov-sponsor-backlog-concentration",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-backlog-concentration"
+    },
+    {
+      "name": "ctgov-sponsor-class-hiddenness",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-class-hiddenness"
+    },
+    {
+      "name": "ctgov-sponsor-class-primary-only-gap",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-class-primary-only-gap"
+    },
+    {
+      "name": "ctgov-sponsor-detailed-description-gap",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-detailed-description-gap"
+    },
+    {
+      "name": "ctgov-sponsor-enrollment-gap-repeaters",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-enrollment-gap-repeaters"
+    },
+    {
+      "name": "ctgov-sponsor-excess-watchlist",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-excess-watchlist"
+    },
+    {
+      "name": "ctgov-sponsor-ghost-repeaters",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-ghost-repeaters"
+    },
+    {
+      "name": "ctgov-sponsor-overdue-debt",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-overdue-debt"
+    },
+    {
+      "name": "ctgov-sponsor-primary-only-gap",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-primary-only-gap"
+    },
+    {
+      "name": "ctgov-sponsor-primary-outcome-gap",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-primary-outcome-gap"
+    },
+    {
+      "name": "ctgov-sponsor-text-asymmetry",
+      "group": "Sponsors",
+      "url": "https://github.com/mahmood726-cyber/ctgov-sponsor-text-asymmetry"
+    },
+    {
+      "name": "ctgov-stopped-trial-disclosure-gap",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-stopped-trial-disclosure-gap"
+    },
+    {
+      "name": "ctgov-strict-core-black-box",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-strict-core-black-box"
+    },
+    {
+      "name": "ctgov-strict-proxy-repeaters",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/ctgov-strict-proxy-repeaters"
+    },
+    {
+      "name": "ctgov-structural-missingness",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-structural-missingness"
+    },
+    {
+      "name": "ctgov-trial-architecture-gap",
+      "group": "Reporting and transparency",
+      "url": "https://github.com/mahmood726-cyber/ctgov-trial-architecture-gap"
+    },
+    {
+      "name": "ctgov-us-vs-exus-sponsor-classes",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-us-vs-exus-sponsor-classes"
+    },
+    {
+      "name": "ctgov-us-vs-global-gap",
+      "group": "Geography",
+      "url": "https://github.com/mahmood726-cyber/ctgov-us-vs-global-gap"
+    },
+    {
+      "name": "ctgov-v2-extractor",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/ctgov-v2-extractor"
+    },
+    {
+      "name": "ctgovhub",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/ctgovhub"
+    },
+    {
+      "name": "enrollmentoracle",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/enrollmentoracle"
+    },
+    {
+      "name": "outcomeswitchdetector",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/outcomeswitchdetector"
+    },
+    {
+      "name": "protocolevolution",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/protocolevolution"
+    },
+    {
+      "name": "trialatlas",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/trialatlas"
+    },
+    {
+      "name": "trialradar",
+      "group": "Methods and tools",
+      "url": "https://github.com/mahmood726-cyber/trialradar"
+    }
+  ]
+}
